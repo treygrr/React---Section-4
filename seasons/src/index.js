@@ -30,13 +30,21 @@ class App extends React.Component {
 
     // React says that we have to define render!!
     render() {
-        return (
-            <div className="InfoWrapper">
-                <div>Latitude: {this.state.lat}</div>
-                <div>Long: {this.state.long}</div>
-                <div>Error: {this.state.errorMessage}</div>
-            </div>
-        );
+        // Add conditional based rendering for the different ways geolocation can return data
+        if (this.state.errorMessage && !this.state.lat) {
+            return <div>Error: {this.state.errorMessage}</div>;
+        }
+
+        if (!this.state.errorMessage && this.state.lat) {
+            return (
+                <div>
+                    <div>Latitude: {this.state.lat}</div>
+                    <div>Long: {this.state.long}</div>
+                </div>
+            );
+        }
+        // Add a default return if none of the conditionals are met above.
+        return <div>Loading!</div>;
     }
 }
 
