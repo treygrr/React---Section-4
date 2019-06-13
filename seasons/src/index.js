@@ -10,7 +10,8 @@ class App extends React.Component {
         // Initialize state object
         this.state = {
             lat: null,
-            long: null
+            long: null,
+            errorMessage: ''
         };
         // We don't usually want async or code that takes time to execute in the render function.
         window.navigator.geolocation.getCurrentPosition(
@@ -21,7 +22,7 @@ class App extends React.Component {
                 this.setState({ long: position.coords.longitude });
             },
             (err) => {
-                console.log(err)
+                this.setState({errorMessage: err.message});
             } 
         );
     }
@@ -33,6 +34,7 @@ class App extends React.Component {
             <div className="InfoWrapper">
                 <div>Latitude: {this.state.lat}</div>
                 <div>Long: {this.state.long}</div>
+                <div>Error: {this.state.errorMessage}</div>
             </div>
         );
     }
