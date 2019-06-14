@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import SeasonDisplay from './SeasonDisplay';
-
+import Spinner from './Spinner';
 
 class App extends React.Component {
     // Not required by react
@@ -57,7 +57,8 @@ class App extends React.Component {
             );
         }
         // Add a default return if none of the conditionals are met above.
-        return <div>Loading!</div>;
+        // Since this is the first run action we are going to return the loading component.
+        return <Spinner text="Waiting for permission to know your location."/>;
     }
 }
 
