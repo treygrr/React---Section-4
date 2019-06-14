@@ -12,7 +12,7 @@ class App extends React.Component {
             lat: null,
             long: null,
             errorMessage: ''
-        };
+        }; 
         // We don't usually want async or code that takes time to execute in the render function.
         window.navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -27,6 +27,13 @@ class App extends React.Component {
         );
     }
 
+    componentDidMount () {
+        console.log('Rendered');
+    }
+
+    componentDidUpdate () {
+        console.log('Rerendered');
+    }
 
     // React says that we have to define render!!
     render() {
