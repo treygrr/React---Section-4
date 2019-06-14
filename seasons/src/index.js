@@ -7,17 +7,32 @@ class App extends React.Component {
     constructor(props) {
         super(props);
 
-        // Initialize state object
+       
         this.state = {
             lat: null,
             long: null,
             errorMessage: ''
         }; 
-        // We don't usually want async or code that takes time to execute in the render function.
+        
+
+    }
+
+    // the idea to abbreviate the syntax here is that babel will build the constructor for us.
+    // I prefer to write out the constructor for better readability personally. 
+    // I like robust definitions. Shortcuts don't do it for me.
+
+    // state = {
+    //     lat: null,
+    //     long: null,
+    //     errorMessage: ''
+    // }; 
+
+    componentDidMount () {
         window.navigator.geolocation.getCurrentPosition(
             (position) => {
                 // We use setState only to set the state. Do not use other traditional ways to try and set it.
                 // This will simply not work.
+                // We don't usually want async or code that takes time to execute in the render function.
                 this.setState({ lat: position.coords.latitude });
                 this.setState({ long: position.coords.longitude });
             },
