@@ -44,8 +44,7 @@ class App extends React.Component {
         );
     }
 
-    // React says that we have to define render!!
-    render() {
+    renderContent () {
         // Add conditional based rendering for the different ways geolocation can return data
         if (this.state.errorMessage && !this.state.lat) {
             return <div>Error: {this.state.errorMessage}</div>;
@@ -59,6 +58,15 @@ class App extends React.Component {
         // Add a default return if none of the conditionals are met above.
         // Since this is the first run action we are going to return the loading component.
         return <Spinner text="Waiting for permission to know your location."/>;
+    }
+
+    // React says that we have to define render!!
+    render () {
+        return (
+            <div className="border red">
+                {this.renderContent()}
+            </div>
+        );
     }
 }
 
