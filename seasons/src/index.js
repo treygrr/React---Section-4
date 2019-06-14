@@ -27,14 +27,6 @@ class App extends React.Component {
         );
     }
 
-    componentDidMount () {
-        console.log('Rendered');
-    }
-
-    componentDidUpdate () {
-        console.log('Rerendered');
-    }
-
     // React says that we have to define render!!
     render() {
         // Add conditional based rendering for the different ways geolocation can return data
