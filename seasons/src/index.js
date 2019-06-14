@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import SeasonDisplay from './seasonDisplay';
+
 
 class App extends React.Component {
     // Not required by react
@@ -51,10 +53,7 @@ class App extends React.Component {
 
         if (!this.state.errorMessage && this.state.lat) {
             return (
-                <div>
-                    <div>Latitude: {this.state.lat}</div>
-                    <div>Long: {this.state.long}</div>
-                </div>
+                <SeasonDisplay lat={this.state.lat} long={this.state.long} />
             );
         }
         // Add a default return if none of the conditionals are met above.
