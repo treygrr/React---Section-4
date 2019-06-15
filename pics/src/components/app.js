@@ -9,7 +9,7 @@ class App extends React.Component {
         this.state = { images: [] };
     }
 
-    async onSearchSubmit(term) {
+    onSearchSubmit = async (term) => {
         const response = await axios
             .get('https://api.unsplash.com/search/photos', {
                 params: {
