@@ -1,12 +1,17 @@
 import React from 'react';
 
 class SearchBar extends React.Component  {
-    onInputChange(event) {
+    constructor (props) {
+        super(props);
+        this.state = { term: '' }
+    }
+
+    onInputChange (event) {
         let text = event.target.value;
         console.log(text);
     }
 
-    onInputClick(event) {
+    onInputClick (event) {
         // console.log('input was clicked');
     }
 
@@ -17,7 +22,8 @@ class SearchBar extends React.Component  {
                     <div className="field">
                         <label>Image Search</label>
                         <input type="text" 
-                               onChange={this.onInputChange}
+                               value={this.state.term}
+                               onChange={(e) => this.setState({ term: e.target.value })}
                                // onClick={this.onInputClick}
                                ></input> 
                     </div>
