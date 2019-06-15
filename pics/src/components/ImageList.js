@@ -9,9 +9,12 @@ class ImageList extends React.Component {
 
     render() {
         console.log(this.props);
+        const images = this.props.images.map((image) => {
+            return <img src={image.urls.regular} alt={image.alt_description}></img>
+        });
         return (
             <div>
-                This is the Image list component!
+                 {images}
             </div>
         );
     }
