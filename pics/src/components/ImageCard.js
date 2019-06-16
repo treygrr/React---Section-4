@@ -1,13 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class ImageCard extends React.Component {
-    getImageHeight = () => {
+    constructor(props) {
+        super(props);
 
+        this.imageref = React.createRef();
+    }
+
+    componentDidMount = () => {
+        console.log(this.calcSpan(this.getImageHeight()));
+        const spanning = this.calcSpan();
     }
 
     calcSpan = () => {
-
+        let height = this.imageref.current.clientHeight;
+        let calc = Math.ceil(height / 200);
+        return calc;
     }
 
     render() {
@@ -17,7 +25,8 @@ class ImageCard extends React.Component {
                 <img 
                     alt={alt_description}
                     src={urls.regular}
-                    style={{grid: '50px'}}
+                    ref={this.imageref}
+                    style={{gridRow: `${this.spanning}`}}
                 />
             </div>
         );
