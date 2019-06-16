@@ -1,5 +1,6 @@
 import './ImageList.css';
 import React from 'react';
+import ImageCard from './ImageCard';
 
 class ImageList extends React.Component {
     constructor(props) {
@@ -12,8 +13,8 @@ class ImageList extends React.Component {
         console.log(this.props);
 
 
-        const images = this.props.images.map(({alt_description, id, urls}) => {
-            return <img key={ id } src={ urls.regular } alt={ alt_description }></img>
+        const images = this.props.images.map((image) => {
+            return <ImageCard key={ image.id } image={image}/>
         });
 
 
