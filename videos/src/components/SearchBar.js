@@ -14,6 +14,7 @@ class SearchBar extends React.Component {
         event.preventDefault();
 
         // TODO: Make sure we call -- callbacck from parent component
+        // AIzaSyCbq5Ppo2m86ozXkXCgHlLeZot9S8yxO44
     }
 
     render() {
