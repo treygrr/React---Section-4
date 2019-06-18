@@ -1,9 +1,10 @@
+import './SearchBar.css';
 import React from 'react';
 
 class SearchBar extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { term: 'Enter Search Terms' }
+        this.state = { term: '' }
     }
 
     onInputChange = (event) => {
