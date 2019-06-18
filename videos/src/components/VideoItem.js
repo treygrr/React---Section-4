@@ -1,9 +1,11 @@
 import React from 'react'
 
-const VideoItem = (props) => {
+const VideoItem = ({video}) => {
     return(
-        <div>
-            Video Item
+        <div key={video.id.videoId}>
+            <img src={video.snippet.thumbnails.medium.url} alt="thumbnail"></img>
+            {video.snippet.title}
+
         </div>
     );
 }
