@@ -9,7 +9,9 @@ const renderedList = videos.map((video) => {
 
     // props.videos
     return (
-        <div>{renderedList}</div>
+        <div className="ui relaxed divided list">
+            {renderedList}
+        </div>
     )
 }
 
