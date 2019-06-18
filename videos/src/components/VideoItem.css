@@ -2,8 +2,17 @@
     display: flex !important;
     align-items: center !important;
     cursor: pointer !important;
+    flex-direction: column !important;
+    padding-top: 10px !important;
 }
 
-.video-item item img {
-    max-width: 250px;
+.video-item.item .content .header {
+    margin: 10px;
+    margin-bottom: 0px;
 }
+
+.video-item.item img {
+    max-width: 250px;
+    margin-bottom: 10px;
+}
+
