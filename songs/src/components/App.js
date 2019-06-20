@@ -1,5 +1,4 @@
 import React from 'react';
-import actions from '../actions';
 
 const App = () => {
     return (
@@ -8,5 +7,3 @@ const App = () => {
         </div>
     );
 }
-
-export default App;
